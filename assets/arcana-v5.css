@@ -1,0 +1,50 @@
+/* ARCANA V5 / art direction system. Kept off main until QA. */
+:root{--gold:#f9d99b;--ink:#080713;--glass:#211b35;--edge:#f5d99a}
+body{background:#07050f!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+body:before{background:radial-gradient(ellipse at 50% -12%,#5b3760 0%,#19112d 38%,#07050f 78%)!important}
+header{padding-top:20px;padding-bottom:17px;border-bottom:1px solid #b9a0d322}
+h1{font-weight:1000;letter-spacing:.19em;text-shadow:0 2px 0 #603f27,0 0 25px #d3a76a4d}
+.wallet{background:linear-gradient(145deg,#3c2b4c,#161026);border-color:#cba764;box-shadow:inset 0 1px 0 #fff5,0 6px 22px #0008;color:#ffe9b1}
+.tabs{gap:11px;margin:19px 0}
+.tab{position:relative;overflow:hidden;min-height:60px;letter-spacing:.045em;background:linear-gradient(150deg,#4e3456,#24152d 70%);border:1px solid #b9977b77;box-shadow:inset 0 1px #ffffff25,0 6px 12px #0007;transition:transform .2s,box-shadow .2s}
+.tab:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,#ffffff18 48%,transparent 60%);transform:translateX(-140%);transition:transform .45s}
+.tab:hover:after{transform:translateX(140%)}
+.tab.active{background:linear-gradient(145deg,#7a5270,#40284b);border-color:#ffe0a0;box-shadow:0 0 0 1px #b68244,inset 0 1px #ffffff55,0 0 28px #f6b86745}
+.stage{border-width:3px;border-radius:28px;box-shadow:0 25px 90px #000e,inset 0 0 0 2px #ffedc733,0 0 38px #c4945933;transition:background-image .3s}
+.stage:before{background:linear-gradient(180deg,#07030bc9 0%,#110b20c9 40%,#0b0718f0 100%)!important}
+body[data-game=neon] .stage{box-shadow:0 25px 90px #000e,inset 0 0 0 2px #c3a0ff55,0 0 42px #9c4fff44}
+body[data-game=dragon] .stage{box-shadow:0 25px 90px #000e,inset 0 0 0 2px #8ce7b155,0 0 42px #49bd7e44}
+h2{font-size:clamp(25px,5vw,40px);letter-spacing:.11em;font-weight:1000;color:#ffebbd;text-shadow:0 3px 0 #7e4d21,0 0 23px #f5c26c66}
+body[data-game=neon] h2{color:#f7d7ff;text-shadow:0 3px #6b267d,0 0 24px #d44cffaa}
+body[data-game=dragon] h2{color:#d9ffe6;text-shadow:0 3px #276548,0 0 24px #6dffc799}
+.desc{text-transform:uppercase;letter-spacing:.13em;font-size:11px!important}
+.board{position:relative;overflow:hidden;border:10px solid transparent;border-image:linear-gradient(135deg,#fff1ba,#a5672d 20%,#f7d593 48%,#67431f 70%,#ffdfa0) 1;background:linear-gradient(#130b24,#24172f);box-shadow:inset 0 5px 25px #000e,0 10px 25px #000a,0 0 35px #e1ac5344;gap:5px;padding:7px}
+.board:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;background:linear-gradient(180deg,#000a 0%,transparent 18%,transparent 82%,#0009 100%);box-shadow:inset 0 0 24px #000b}
+.board.neon{border-image:linear-gradient(130deg,#e9adff,#4b248d 25%,#72e6ff 55%,#6c2798) 1;box-shadow:inset 0 5px 25px #000e,0 0 38px #a14dfb55}
+.board.dragon{border-image:linear-gradient(130deg,#ffe9a5,#286d4b 25%,#6cdb9b 55%,#7d4a1b) 1;box-shadow:inset 0 5px 25px #000e,0 0 38px #4dc78c55}
+.cell{border-radius:5px;background:radial-gradient(ellipse at 32% 16%,#75617c 0%,#322342 46%,#100d1e 100%);border:1px solid #f5d8ac33;box-shadow:inset 0 3px 8px #ffffff19,inset 0 -8px 12px #000b,0 2px 5px #0008;transform:translateZ(0)}
+.board.neon .cell{background:radial-gradient(ellipse at 30% 15%,#50426e,#14122c 75%);border-color:#b07dff4d}
+.board.dragon .cell{background:radial-gradient(ellipse at 30% 15%,#385e58,#101c25 75%);border-color:#92edbd40}
+.cell img{width:91%;height:91%;filter:drop-shadow(0 6px 3px #000a) drop-shadow(0 0 8px #f8c77044);transform:translateY(-2px);transition:filter .2s,transform .2s}
+.cell:after{background:linear-gradient(130deg,#fff6 0%,#fff1 17%,transparent 35%,transparent 80%,#0006 100%)}
+.cell.win{animation:v5Pulse .35s ease-in-out alternate infinite;box-shadow:0 0 0 2px #fff2a3,0 0 22px #ffd26f,inset 0 0 19px #fff2a355}
+.cell.win img{filter:drop-shadow(0 0 10px #fff2b4) brightness(1.35)}
+.cell.spin img{animation:v5Spin .12s linear infinite}
+.cell.fall img{animation:v5Fall .43s cubic-bezier(.17,1.35,.35,1) both}
+.cell.clear{animation:v5Shatter .36s cubic-bezier(.3,.1,.7,1) forwards}
+.result{padding:6px;letter-spacing:.035em;min-height:56px}
+.small{background:linear-gradient(#4e365b,#281c3d);border-color:#b9987a;box-shadow:inset 0 1px #ffffff3b,0 3px 0 #1b1124;transition:filter .15s}
+.small:hover{filter:brightness(1.22)}
+.spinbtn{position:relative;overflow:hidden;border:1px solid #fff2c2;background:linear-gradient(180deg,#fff6ce,#ffcb64 38%,#b87528 100%);box-shadow:inset 0 2px #fff9,0 5px 0 #744016,0 0 26px #f6c36588;letter-spacing:.09em;text-shadow:0 1px #fff7;transition:filter .15s}
+.spinbtn:hover{filter:brightness(1.15)}
+.spinbtn:after{content:"";position:absolute;top:-80%;left:-50%;width:40%;height:250%;transform:rotate(25deg);background:#fff6;animation:shine 4s ease-in-out infinite;pointer-events:none}
+.panel{background:linear-gradient(150deg,#241932,#120e20);border-color:#8e6e5a88;box-shadow:inset 0 1px #fff2,0 10px 25px #0005}
+.bonusBox{background:radial-gradient(circle at 50% 0%,#8b5b68,#28152e 65%,#110d20);border:3px ridge #ffe3a1;box-shadow:0 0 0 6px #e5b46e22,0 0 100px #f7bc6288}
+.bonusBox button{background:linear-gradient(#a47b75,#50324f);box-shadow:0 4px 0 #29142a,inset 0 1px #fff5}
+@keyframes v5Pulse{to{transform:scale(1.065);filter:brightness(1.4)}}
+@keyframes v5Spin{0%{transform:translateY(-12%) scaleY(.85);filter:blur(3px)}50%{transform:translateY(15%) scaleY(1.08);filter:blur(6px)}100%{transform:translateY(-12%) scaleY(.85);filter:blur(3px)}}
+@keyframes v5Fall{from{transform:translateY(-190%) scale(.85);opacity:0;filter:blur(6px)}70%{transform:translateY(6%) scale(1.05);opacity:1;filter:blur(0)}to{transform:translateY(0) scale(1)}}
+@keyframes v5Shatter{0%{transform:scale(1);filter:brightness(1)}35%{transform:scale(1.18);filter:brightness(2.5)}100%{transform:scale(.08) rotate(35deg);opacity:0}}
+@keyframes shine{0%,65%{left:-50%}80%,100%{left:130%}}
+@media(max-width:600px){.tabs{gap:5px}.tab{min-height:54px;padding:8px 3px}.board{border-width:5px;gap:2px;padding:3px}.cell img{width:98%;height:98%}.stage{border-radius:20px}.spinbtn{font-size:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
