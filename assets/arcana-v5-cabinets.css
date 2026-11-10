@@ -1,0 +1,29 @@
+/* ARCANA V5.2 — unique machine cabinets and material lighting */
+.stage{--metal1:#f8e1a4;--metal2:#996126;--metal3:#3d261a;--aura:#edb960;--glass:#342039;position:relative;padding-top:clamp(20px,4vw,38px);border:0!important;border-radius:32px!important;background-image:none!important;background:radial-gradient(ellipse at 50% 3%,#74522c80,transparent 58%),linear-gradient(155deg,#3b2231,#0b0a1c 65%)!important;box-shadow:0 25px 75px #000c,0 0 35px #edb96022!important}
+.stage:before{content:"";position:absolute;z-index:-1;inset:7px;border:2px solid #b78545;border-radius:25px;background:radial-gradient(ellipse at 50% 0%,#8d582f44,transparent 65%),linear-gradient(180deg,#201323ed,#080713f7)!important;box-shadow:inset 0 0 0 2px #fce2a833,inset 0 0 35px #000d}
+.stage:after{content:"";position:absolute;inset:0;z-index:-1;border:9px solid transparent;border-radius:32px;background:linear-gradient(130deg,#fff4bf,#ad7231 17%,#4b2a16 28%,#edc47a 49%,#57341d 75%,#f8d998) border-box;mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none;box-shadow:inset 0 0 0 2px #ffe1a522}
+.stage h2{position:relative;display:inline-block;margin-bottom:7px;padding:8px 22px;border-radius:13px;background:linear-gradient(180deg,#4c2d2a,#1c1224);border:1px solid #edc68b88;box-shadow:0 4px 20px #0009,0 0 18px #f8cb6944}
+.stage h2:before,.stage h2:after{content:"✦";position:absolute;top:50%;transform:translateY(-50%);font-size:14px;color:var(--aura)}
+.stage h2:before{left:5px}.stage h2:after{right:5px}
+.stage .board{margin-top:18px;border-radius:15px;border:10px solid transparent;border-image:none!important;background:linear-gradient(#07060c,#27162c 60%,#09060f)!important;box-shadow:0 0 0 2px var(--metal2),0 0 0 5px var(--metal3),0 0 0 7px var(--metal1),0 15px 34px #000c,inset 0 5px 25px #000e,inset 0 -5px 25px #000e!important}
+.stage .board:before{border-radius:8px}
+.stage .cell{position:relative;isolation:isolate;perspective:300px;box-shadow:inset 0 3px 8px #ffffff22,inset 0 -7px 14px #000c,0 2px 4px #0008}
+.stage .cell img{position:relative;z-index:1;transform:translateY(-2px) rotateX(3deg);filter:drop-shadow(0 7px 2px #000b) drop-shadow(0 0 8px var(--aura));transition:transform .25s,filter .25s}
+.stage .cell.win img{animation:arcanaSymbolWin .55s ease-in-out infinite alternate}
+.stage .cell:after{z-index:2;opacity:.55}
+body[data-game=neon] .stage{--metal1:#c1b4ff;--metal2:#8c46db;--metal3:#1e1552;--aura:#ae57ff;--glass:#191338;background:radial-gradient(ellipse at 50% 2%,#8738c380,transparent 60%),linear-gradient(145deg,#221c52,#09071a 70%)!important}
+body[data-game=neon] .stage:before{border-color:#9156ec;background:radial-gradient(ellipse at 50% 0%,#682ba644,transparent 65%),linear-gradient(#130e32f2,#070816f7)!important}
+body[data-game=neon] .stage:after{background:linear-gradient(130deg,#edc8ff,#6836bb 22%,#222268 40%,#a2e9ff 58%,#3a237b 80%,#edc8ff) border-box}
+body[data-game=neon] .stage h2{background:linear-gradient(#40266e,#140d38);border-color:#b879ff}
+body[data-game=neon] .stage .board{background:linear-gradient(#070b22,#1c1140)!important}
+body[data-game=dragon] .stage{--metal1:#e8cb89;--metal2:#4f9c70;--metal3:#153c2b;--aura:#70e8a2;--glass:#172c26;background:radial-gradient(ellipse at 50% 2%,#367c4b99,transparent 60%),linear-gradient(145deg,#193a30,#080e19 70%)!important}
+body[data-game=dragon] .stage:before{border-color:#609c6c;background:radial-gradient(ellipse at 50% 0%,#35825444,transparent 65%),linear-gradient(#10291ef2,#071011f7)!important}
+body[data-game=dragon] .stage:after{background:linear-gradient(130deg,#f7db9e,#4c9c6b 22%,#183f2e 40%,#cba45e 58%,#224d39 80%,#f7db9e) border-box}
+body[data-game=dragon] .stage h2{background:linear-gradient(#244c36,#101d22);border-color:#8ce9a6}
+body[data-game=dragon] .stage .board{background:linear-gradient(#081812,#18352a)!important}
+body[data-game=dragon] .stage .cell img{filter:drop-shadow(0 5px 2px #000c) drop-shadow(0 0 5px #6dffa34d)}
+body[data-game=neon] .stage .cell.win{animation:neonWinner .3s alternate infinite}
+@keyframes arcanaSymbolWin{from{transform:translateY(-2px) scale(1);filter:drop-shadow(0 4px 3px #000a) drop-shadow(0 0 5px var(--aura))}to{transform:translateY(-7px) rotateY(8deg) scale(1.12);filter:drop-shadow(0 10px 4px #000a) drop-shadow(0 0 18px var(--aura)) brightness(1.35)}}
+@keyframes neonWinner{to{box-shadow:0 0 0 2px #fff,0 0 24px #c361ff,inset 0 0 20px #ca5cff}}
+@media(max-width:600px){.stage{border-radius:20px!important;padding:18px 12px 16px}.stage:after{border-width:6px;border-radius:20px}.stage:before{inset:5px;border-radius:15px}.stage h2{padding:8px 15px}.stage .board{border-width:4px;box-shadow:0 0 0 1px var(--metal2),0 0 0 3px var(--metal3),0 0 0 4px var(--metal1),0 8px 20px #000b!important}.stage .cell img{width:95%;height:95%}}
+@media(prefers-reduced-motion:reduce){.stage .cell.win img,.stage .cell.win{animation:none!important}}
