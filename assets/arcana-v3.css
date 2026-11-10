@@ -1,0 +1,10 @@
+/* ARCANA V3 - commercial-style 3D prerendered assets */
+body{background:#09051a url('lobby.webp') center top / cover fixed no-repeat}
+body:before{content:'';position:fixed;inset:0;background:linear-gradient(#09051a66,#09051ae8);pointer-events:none;z-index:-1}
+.machine{background-size:cover!important;background-position:center!important;box-shadow:0 20px 70px #000d,0 0 40px #f8a62933!important;isolation:isolate}
+.machine:before{content:'';position:absolute;inset:0;background:linear-gradient(#0c082166,#0c0821e6);z-index:-1;border-radius:inherit}
+body[data-game='pharaoh'] .machine{background-image:url('pharaoh-machine.webp')!important}
+body[data-game='neon'] .machine{background-image:url('neon-machine.webp')!important}
+body[data-game='dragon'] .machine{background-image:url('dragon-machine.webp')!important}
+.reel{backdrop-filter:blur(12px);box-shadow:inset 0 0 16px #2e164b55,0 5px 18px #000a!important}
+@media(max-width:700px){body{background-attachment:scroll;background-size:auto 100vh}}
